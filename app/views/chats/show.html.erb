@@ -1,0 +1,13 @@
+<h1><%= @user.name %>さんとのチャット</h1>
+
+<% @chats.each do |chat| %>
+ <%= chat.message %>
+<% end %>
+
+
+
+<%= form_with model: @chat, remote: true do |f| %>
+ <%=f.text_field :message %>
+ <% end %>
+
+非同期
